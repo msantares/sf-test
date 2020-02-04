@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: local('IBM Plex Sans'),
+    local('IBMPlexSans'),
+    url('/assets/Ibmplexsans.woff2') format('woff2'),
+    url('/assets/Ibmplexsans.woff') format('woff'),
+    url('/assets/Ibmplexsans.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+*
+  box-sizing: border-box;
+body
+  background-color: #181818
+  margin: 0
+  font-size: 16px
+  font-family IBM Plex Sans, sans-serif
+  font-style: normal;
+  font-weight: normal;
+  color: #BEBEBE;
+h1
+  color #F3F3F3
+  font-size: 32px;
+  line-height: 40px;
+
+label
+  display: block
+  margin-bottom 8px
+  color: #BEBEBE;
+  font-size: 12px;
+input
+  width 100%
+  display: block
+  height: 40px
+  font-size: 14px;
+  padding 0 16px
+  background-color #3D3D3D
+  border:none
+  border-bottom 1px solid #8C8C8C;
+  margin-bottom 25px
+  color: #8C8C8C;
+  &::placeholder
+    color: #8C8C8C;
+button
+  border none
+  cursor: pointer;
+  background: #0062FF;
+  transition background-color 0.3s linear
+  color #fff
+  height: 48px;
+  min-width 140px
+  &:hover
+    background-color #3f87f9

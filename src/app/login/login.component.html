@@ -1,0 +1,27 @@
+<div class="login-pane">
+  <h1>Войти в личный кабинет агента</h1>
+
+  <div class="link">
+    Войти как клиент &rarr;
+  </div>
+
+
+  <form [formGroup]="loginForm">
+    <label for="phone">Номер телефона</label>
+    <input type="number" id="phone" placeholder="Введите телефон" formControlName="phone"/>
+
+
+    <label for="password">Пароль</label>
+    <input type="password" id="password" placeholder="Введите пароль" formControlName="password"/>
+
+
+    <button>Войти</button>
+  </form>
+
+
+  Хотите стать агентом?<br/>
+  <div class="more-info-link">
+    Подробности&nbsp;&nbsp;&nbsp;&rarr;
+  </div>
+</div>
+
