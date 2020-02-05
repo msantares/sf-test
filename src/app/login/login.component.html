@@ -1,27 +1,43 @@
 <div class="login-pane">
   <h1>Войти в личный кабинет агента</h1>
-
-  <div class="link">
-    Войти как клиент &rarr;
+  <div class="switch-form-link">
+    Войти как клиент&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rarr;
   </div>
 
 
-  <form [formGroup]="loginForm">
-    <label for="phone">Номер телефона</label>
-    <input type="number" id="phone" placeholder="Введите телефон" formControlName="phone"/>
+  <form [formGroup]="loginForm" (submit)="authorizeUser()">
+    <div class="input-group">
+      <label for="phone">Номер телефона</label>
+      <input type="text" id="phone" placeholder="Введите телефон" formControlName="phone"/>
+    </div>
 
+    <div class="input-group">
+      <label for="password">Пароль</label>
+      <input [type]="passwordInputType" id="password" placeholder="Введите пароль" formControlName="password"/>
+      <a class="recovery-password-link">Забыли пароль?</a><!--routerLink="recovery-password"-->
+      <span class="input-type-switcher" (click)="switchInputType()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M15.47 7.83C14.2669 4.72169 11.3306 2.62656 7.99997 2.5C4.66936 2.62656 1.73304 4.72169 0.52997 7.83C0.490254 7.93985 0.490254 8.06015 0.52997 8.17C1.73304 11.2783 4.66936 13.3734 7.99997 13.5C11.3306 13.3734 14.2669 11.2783 15.47 8.17C15.5097 8.06015 15.5097 7.93985 15.47 7.83ZM7.99997 12.5C5.34997 12.5 2.54997 10.535 1.53497 8C2.54997 5.465 5.34997 3.5 7.99997 3.5C10.65 3.5 13.45 5.465 14.465 8C13.45 10.535 10.65 12.5 7.99997 12.5ZM7.99997 5C6.34312 5 4.99997 6.34315 4.99997 8C4.99997 9.65685 6.34312 11 7.99997 11C9.65683 11 11 9.65685 11 8C11 6.34315 9.65683 5 7.99997 5ZM7.99997 10C6.8954 10 5.99997 9.10457 5.99997 8C5.99997 6.89543 6.8954 6 7.99997 6C9.10454 6 9.99997 6.89543 9.99997 8C9.99997 8.53043 9.78926 9.03914 9.41418 9.41421C9.03911 9.78929 8.5304 10 7.99997 10Z" fill="#8C8C8C"/>
+          <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="2" width="16" height="12">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.47 7.83C14.2669 4.72169 11.3306 2.62656 7.99997 2.5C4.66936 2.62656 1.73304 4.72169 0.52997 7.83C0.490254 7.93985 0.490254 8.06015 0.52997 8.17C1.73304 11.2783 4.66936 13.3734 7.99997 13.5C11.3306 13.3734 14.2669 11.2783 15.47 8.17C15.5097 8.06015 15.5097 7.93985 15.47 7.83ZM7.99997 12.5C5.34997 12.5 2.54997 10.535 1.53497 8C2.54997 5.465 5.34997 3.5 7.99997 3.5C10.65 3.5 13.45 5.465 14.465 8C13.45 10.535 10.65 12.5 7.99997 12.5ZM7.99997 5C6.34312 5 4.99997 6.34315 4.99997 8C4.99997 9.65685 6.34312 11 7.99997 11C9.65683 11 11 9.65685 11 8C11 6.34315 9.65683 5 7.99997 5ZM7.99997 10C6.8954 10 5.99997 9.10457 5.99997 8C5.99997 6.89543 6.8954 6 7.99997 6C9.10454 6 9.99997 6.89543 9.99997 8C9.99997 8.53043 9.78926 9.03914 9.41418 9.41421C9.03911 9.78929 8.5304 10 7.99997 10Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask0)"></g>
+        </svg>
 
-    <label for="password">Пароль</label>
-    <input type="password" id="password" placeholder="Введите пароль" formControlName="password"/>
+      </span>
+    </div>
 
-
-    <button>Войти</button>
+    <button [disabled]="loginForm.invalid">
+      Войти
+    </button>
   </form>
 
 
-  Хотите стать агентом?<br/>
-  <div class="more-info-link">
-    Подробности&nbsp;&nbsp;&nbsp;&rarr;
+  <div class="footer-info">
+    Хотите стать агентом?<br/>
+    <div class="more-info-link">
+      Подробности&nbsp;&nbsp;&nbsp;&rarr;
+    </div>
   </div>
 </div>
 

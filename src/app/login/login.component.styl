@@ -2,7 +2,7 @@
   height: 100vh;
   display: flex;
   justify-content: flex-end;
-  background url("/assets/cube.png") no-repeat
+  background url("/assets/cube.png") no-repeat top 2px right 387px
 
 .login-pane
   display: flex;
@@ -14,6 +14,7 @@
   color #BEBEBE
   font-size 14px
   h1
+    margin: 0 0 15px 0;
     width 295px
     font-family: IBM Plex Sans;
     font-style: normal;
@@ -21,8 +22,9 @@
     font-size: 32px;
     line-height: 40px;
     color: #FFFFFF;
-  .link
+  .switch-form-link
     cursor pointer
+    color #BEBEBE
     margin-bottom: 44px
     transition color 0.3s linear
     &:hover
@@ -30,13 +32,29 @@
   form
     flex: 1 1 100px;
     margin-bottom 30px
+    .recovery-password-link
+      color: #FFFFFF;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 12px;
+      &:hover
+        text-decoration underline
+    .input-type-switcher
+      position absolute
+      top: 24px;
+      right: 6px;
+      cursor: pointer;
+      padding: 10px;
     button
       margin-top 15px
-  .more-info-link
-    display inline-block
-    margin-top 7px
-    color: #6EA6FF;
-    cursor pointer
-    transition color 0.3s linear
-    &:hover
-      color: #3f87f9
+  .footer-info
+    margin-bottom: 6px;
+    .more-info-link
+      display inline-block
+      margin-top 7px
+      color: #6EA6FF;
+      cursor pointer
+      transition color 0.3s linear
+      &:hover
+        color: #3f87f9
