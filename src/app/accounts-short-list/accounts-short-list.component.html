@@ -3,18 +3,18 @@
 </div>
 
 <div class="available-sum">
-  <span class="sum">{{accounts[0].sum}}</span>
+  <span class="sum">{{accounts[0].sum | currency:'RUB':'&#8381;':'4.0-2'}}</span>
   <span class="description">Доступные средства</span>
 </div>
 
 <div *ngIf="accounts[0].hold" class="hold-sum">
-  <span class="sum">{{accounts[0].hold}}</span>
+  <span class="sum">{{accounts[0].hold | currency:'RUB':'&#8381;':'4.0-2'}}</span>
   <span class="description">Заблокированные средства</span>
 </div>
 
-<div class="bottom-content">
-  <button>{{accounts.length}}</button>
-  <a>Смотреть в точке</a> <!--[routerLink]="['/...']"-->
+<div>
+  <a class="button">{{accounts.length}} счетов</a>
+  <a [routerLink]="smth">Смотреть в точке</a>
 </div>
 
 <!--

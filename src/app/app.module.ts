@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+registerLocaleData(localeRu, 'ru');
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,7 +36,9 @@ import { RequestShortListComponent } from './request-short-list/request-short-li
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: "ru-RU" }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

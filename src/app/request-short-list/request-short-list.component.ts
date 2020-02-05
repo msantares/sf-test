@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserRequestService} from "../user-request.service";
 
 @Component({
   selector: 'app-request-short-list',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request-short-list.component.styl']
 })
 export class RequestShortListComponent implements OnInit {
+  requests = [];
 
-  constructor() { }
+  constructor(
+    private userRequestService: UserRequestService,
+  ) { }
 
   ngOnInit() {
+    this.getRequests();
   }
 
+  getRequests(){
+    this.userRequestService.getRequests()
+      .pipe()
+      .subscribe(requests => this.requests = requests)
+  }
 }
